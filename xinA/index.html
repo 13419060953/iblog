@@ -3,8 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport"
-     content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-sacle=1.0,user-scalable=no" >
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-sacle=1.0,user-scalable=no">
    <title></title>
 </head>
    <script src="jquery-3.2.1.min.js"></script>
@@ -14,12 +13,17 @@
    <link rel="stylesheet" type="text/css" href="css/index.css">
 
 <script>
-/*$(document).ready(function(){
-//$(window).bind('scroll',function(){show()});
+$(document).ready(function(){
+ //  $(window).bind('scroll',function(){show()});
+ //alert();
+show();
+})
+
+function show(){
 
 for(i=0;i<5;i++){
 
- var li=$("<li></li>").addClass("list-group-item");
+  var li=$("<li></li>").addClass("list-group-item");
 
   //行div
   var row=$("<div></div>").addClass("row");
@@ -35,13 +39,23 @@ for(i=0;i<5;i++){
   //主体div
  var body=$("<div></div>").addClass("col-lg-10 col-md-10 col-sm-10");
 
-  //标题
-  var title=$("<p></p>").addClass("text-info").append("javascript 的开始");
+  //标题  <p ><h4 class="text-info">ITBOY</h4></p>
+  var title=$("<p></p>").append($("<h4></h4>").addClass("text-info").append("Sue triead"));
 
-  //作者
-  var user=$("<p></p>").addClass("text-danger").append("作者:").append($("<span></span>").addClass("glyphicon glyphicon-lamp").append("二次元"));
+  //状态行 
+			 //*************************************************************
+  var p=$("<p></p>").addClass("text-default").css("font-size","smaller");
+  var li1=$("<li></li>").append($("<span></span>").addClass("glyphicon glyphicon-dashboard")).append($("<small></small>").append($("<i></i>").addClass("data").append("2017-5-8")));
+  var li2=$("<li></li>").append($("<span></span>").addClass("glyphicon glyphicon-user")).append($("<small></small>").append("Sue triead"));
+  var li3=$("<li></li>").append($("<span></span>").addClass("glyphicon glyphicon-eye-open")).append($("<i></i>").css("vertical-align","text-bottom").append("(1)"));
+   var li4=$("<li></li>").append($("<span></span>").addClass("glyphicon glyphicon-user")).append($("<small></small>").append("技术分享"));
+  var ul=$("<ul></ul>").addClass("list-inline");
+  ul.append(li1).append(li2).append(li3);
+  p.append(ul);
+  
+  //***********************
 
-  //显示部分内容
+  //显示部分内容 
 
   var bodytext=$("<p></p>").addClass("text-success change").append("  柔和灰（text-muted）、主要蓝（text-primary");
 
@@ -49,15 +63,19 @@ for(i=0;i<5;i++){
 
   var btn=$($("<p></p>").addClass("text-right").append($("<button></button>").addClass("btn btn-danger").append("阅读全部")));
 
-  body.append(title).append(user).append(bodytext).append(btn);
+  
+  body.append(title).append(p).append(bodytext).append(li4).append(btn);
+  //body.append(title).append(user).append(bodytext).append(btn);
 
-  li.append(row.append(imgdiv).append(body));
-  $(".active").append(li);}
+  row.append(imgdiv).append(body);
+  //$(".active").append(li);}
 
-
+   li.append(row);
+$("#play").append(li);
 
   //alert("dd");
-})*/
+  }
+}
 </script>
 <body>
 <nav class="navbar  navbar-inverse navbar-fixed-top" style="background-color:#333333;">
@@ -98,114 +116,10 @@ for(i=0;i<5;i++){
   <!---->
 			      <div class="col-lg-12">
 <ul id="play">
- <li class="list-group-item">
-    <div class="row">
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-    <img src="image/2.jpg" width="100%" height="100%" class="img-rounded">
-    </div>
-    <div class="col-lg-10  col-md-10 col-sm-10">
-      <p ><h4 class="text-info">ITBOY</h4></p>
-      <p class="text-default" style=" font-size: smaller;">
-      <ul class="list-inline">
-      <li>
-      <span class="glyphicon glyphicon-dashboard"></span><small><i>1</i>小时前</small>
-      </li><li>
-      <span class="glyphicon glyphicon-user"></span><small>大叔</small>
-      </li><li>
-        <span class="glyphicon glyphicon-thumbs-up"></span><i style="vertical-align: text-bottom;">(1)</i>
-      </li>
-      </ul>
-      </p>
-      <p class="text-success change">
-        柔和灰（text-muted）、主要蓝（text-primary）、成功绿（text-success）、信息蓝（text-info）、警告黄（text-warning）、危险红（text-danger）......
-      </p>
-      <p class="text-right">
-      <button class="btn btn-danger">阅读全部</button>
-      </p>
-    </div>
-    </div>
-    </li>
-    <li class="list-group-item">
-    <div class="row">
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-    <img src="image/2.jpg" width="100%" height="100%" class="img-rounded">
-    </div>
-    <div class="col-lg-10  col-md-10 col-sm-10">
-      <p ><h4 class="text-info">ITBOY</h4></p>
-      <p class="text-default" style=" font-size: smaller;">
-      <ul class="list-inline">
-      <li>
-      <span class="glyphicon glyphicon-dashboard"></span><small><i>1</i>小时前</small>
-      </li><li>
-      <span class="glyphicon glyphicon-user"></span><small>大叔</small>
-      </li><li>
-        <span class="glyphicon glyphicon-thumbs-up"></span><i style="vertical-align: text-bottom;">(1)</i>
-      </li>
-      </ul>
-      </p>
-      <p class="text-success change">
-        柔和灰（text-muted）、主要蓝（text-primary）、成功绿（text-success）、信息蓝（text-info）、警告黄（text-warning）、危险红（text-danger）......
-      </p>
-      <p class="text-right">
-      <button class="btn btn-danger">阅读全部</button>
-      </p>
-    </div>
-    </div>
-    </li>
-    <li class="list-group-item">
-    <div class="row">
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-    <img src="image/2.jpg" width="100%" height="100%" class="img-rounded">
-    </div>
-    <div class="col-lg-10  col-md-10 col-sm-10">
-      <p ><h4 class="text-info">ITBOY</h4></p>
-      <p class="text-default" style=" font-size: smaller;">
-      <ul class="list-inline">
-      <li>
-      <span class="glyphicon glyphicon-dashboard"></span><small><i>1</i>小时前</small>
-      </li><li>
-      <span class="glyphicon glyphicon-user"></span><small>大叔</small>
-      </li><li>
-        <span class="glyphicon glyphicon-thumbs-up"></span><i style="vertical-align: text-bottom;">(1)</i>
-      </li>
-      </ul>
-      </p>
-      <p class="text-success change">
-        柔和灰（text-muted）、主要蓝（text-primary）、成功绿（text-success）、信息蓝（text-info）、警告黄（text-warning）、危险红（text-danger）......
-      </p>
-      <p class="text-right">
-      <button class="btn btn-danger">阅读全部</button>
-      </p>
-    </div>
-    </div>
-    </li>
-    <li class="list-group-item">
-    <div class="row">
-    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-    <img src="image/2.jpg" width="100%" height="100%" class="img-rounded">
-    </div>
-    <div class="col-lg-10  col-md-10 col-sm-10">
-      <p ><h4 class="text-info">ITBOY</h4></p>
-      <p class="text-default" style=" font-size: smaller;">
-      <ul class="list-inline">
-      <li>
-      <span class="glyphicon glyphicon-dashboard"></span><small><i>1</i>小时前</small>
-      </li><li>
-      <span class="glyphicon glyphicon-user"></span><small>大叔</small>
-      </li><li>
-        <span class="glyphicon glyphicon-thumbs-up"></span><i style="vertical-align: text-bottom;">(1)</i>
-      </li>
-      </ul>
-      </p>
-      <p class="text-success change">
-        柔和灰（text-muted）、主要蓝（text-primary）、成功绿（text-success）、信息蓝（text-info）、警告黄（text-warning）、危险红（text-danger）......
-      </p>
-      <p class="text-right">
-      <button class="btn btn-danger">阅读全部</button>
-      </p>
-    </div>
-    </div>
-    </li>
+
+
+	
+	
     </ul>
 	</div>
   </div>
@@ -215,7 +129,7 @@ for(i=0;i<5;i++){
 <div class="col-md-12 col-lg-4">
 
 <aside class="widget" id="divLinkage">
-<h3><i class="fa fa-bars"><span class="glyphicon glyphicon-fire text-danger"></span></i><span class="icon" style="font-size: 19px;font-family: cursive;">小苏不说话</span></h3>
+<h3><i class="fa fa-bars"><span class="glyphicon glyphicon-fire text-danger"></span></i><span class="icon" style="font-size: 19px;font-family: cursive;">Sue Triead</span></h3>
 
 
   <div class="row">
@@ -223,7 +137,7 @@ for(i=0;i<5;i++){
     <div class="thumbnail widgets">
       <img src="image/logo.jpg" alt="...">
       <div class="caption">
-        <h3 class="text-danger" style="font-size: 19px;font-family: cursive;">来自小白的心</h3>
+        <h3 class="text-danger" style="font-size: 19px;font-family: cursive;"></h3>
       </div>
     </div>
   </div>
@@ -251,7 +165,7 @@ for(i=0;i<5;i++){
 </div>
 <div class="row">
 <div class="col-md-12 text-center text-success extend">
- 创建于 2017.01.16 一个Java码农的博客
+ 创建于 2017.10.26 Sue Tiread Java码农的博客
  </div>
  </div>
 </div>
